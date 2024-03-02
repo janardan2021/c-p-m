@@ -8,8 +8,12 @@ const ProjectSchema = new mongoose.Schema({
     clientId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Client'
-    }         
-})
+    }  ,
+    adminId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }        
+},{timestamps: true})
 
 const Project = mongoose.model("Project", ProjectSchema)
 export {Project}
