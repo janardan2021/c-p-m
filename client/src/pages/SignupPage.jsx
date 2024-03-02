@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { IoIosEye , IoIosEyeOff} from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 
-import { LOGIN_USER, SIGNUP_USER } from '../mutations/userMutations';
-import { useMutation, useQuery } from "@apollo/client"
+import { SIGNUP_USER } from '../mutations/userMutations';
+import { useMutation} from "@apollo/client"
 
 import { useUserContext } from "../hooks/useUserContext.js"
 import { useApolloClient } from '@apollo/client';
@@ -57,7 +57,7 @@ export default function SignupPage() {
           cpmuserDispatch({type: 'LOGIN', payload: data.signupUser})
           // navigate('/')
         }
-      }, [data, error, cpmuserDispatch, cpmuser, navigate])
+      }, [data, error, cpmuserDispatch, cpmuser, navigate, client])
 
       if (loading) return <Loader />
   return (

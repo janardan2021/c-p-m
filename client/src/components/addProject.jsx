@@ -10,17 +10,19 @@ import Loader from '../components/Loader.jsx'
 import Error from "./Error.jsx";
 
 export default function AddProject() {
-    const {state: cpmuser, dispatch: cpmuserDispatch} = useUserContext()
+    const {state: cpmuser} = useUserContext()
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [clientId, setClientId] = useState("");
-    const [adminId, setAdminId] = useState((cpmuser === null) ? '' : cpmuser.id)
+    // const [adminId, setAdminId] = useState((cpmuser === null) ? '' : cpmuser.id)
+    const adminId = (cpmuser === null) ? '' : cpmuser.id
+
     // console.log(adminId)
     const [status, setStatus] = useState("new")
 
   
 
-    const [addProject, { data, loading, error }] = useMutation(ADD_PROJECT, 
+    const [addProject, {loading, error }] = useMutation(ADD_PROJECT, 
                                        {variables: {name, description, clientId, status, adminId},
                                        errorPolicy: "none",
                                        update(cache, {data: {addProject}}){

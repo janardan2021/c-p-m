@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {FaUser} from 'react-icons/fa'
+// import {FaUser} from 'react-icons/fa'
 import { useMutation } from "@apollo/client"
 import { ADD_CLIENT } from "../mutations/clientMutations";
 import { GET_CLIENTS } from "../queries/clientQueries";
@@ -9,13 +9,13 @@ import Error from "./Error.jsx";
 import Loader from "./Loader.jsx";
 
 export default function AddClient() {
-    const {state: cpmuser, dispatch: cpmuserDispatch} = useUserContext()
-    const [adminId, setAdminId] = useState((cpmuser === null) ? '' : cpmuser.id)
+    const {state: cpmuser} = useUserContext()
+    const adminId = (cpmuser === null) ? '' : cpmuser.id
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    const [addClient, { data, loading, error }] = useMutation(ADD_CLIENT , 
+    const [addClient, { loading, error }] = useMutation(ADD_CLIENT , 
                                      {variables: {name, email, phone, adminId},
                                       errorPolicy: "none",
                                     //  refetchQueries: [{query: GET_CLIENTS}]

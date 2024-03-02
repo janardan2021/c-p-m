@@ -4,7 +4,7 @@ import { GET_CLIENTS } from '../queries/clientQueries'
 import ClientRow from './ClientRow'
 import Loader from './Loader'
 import Error from './Error'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 
 export default function Clients() {
    const {loading, error, data} = useQuery(GET_CLIENTS)

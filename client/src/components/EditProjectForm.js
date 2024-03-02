@@ -7,11 +7,12 @@ import Error from "./Error.jsx";
 import Loader from "./Loader.jsx";
 
 export default function EditProjectForm({project}) {
-    const {state: cpmuser, dispatch: cpmuserDispatch} = useUserContext()
+    const {state: cpmuser} = useUserContext()
     const [name, setName] = useState(project.name);
     const [description, setDescription] = useState(project.description);
     const [status, setStatus] = useState('new')
-    const [adminId, setAdminId] = useState((cpmuser === null) ? '' : cpmuser.id)
+    // const [adminId, setAdminId] = useState((cpmuser === null) ? '' : cpmuser.id)
+    const adminId = (cpmuser === null) ? '' : cpmuser.id
 
     const [updateProject , {error, loading}] = useMutation(UPDATE_PROJECT, 
                             {variables: {id: project.id, name, description, status, adminId},
