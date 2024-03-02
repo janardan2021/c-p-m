@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { IoIosEye , IoIosEyeOff} from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 
-import { LOGIN_USER, SIGNUP_USER } from '../mutations/userMutations';
-import { useMutation, useQuery } from "@apollo/client"
-import { GET_CLIENTS } from "../queries/clientQueries";
-import { GET_PROJECTS } from '../queries/projectQueries.js';
+import { LOGIN_USER} from '../mutations/userMutations';
+import { useMutation} from "@apollo/client"
+// import { GET_CLIENTS } from "../queries/clientQueries";
+// import { GET_PROJECTS } from '../queries/projectQueries.js';
 
 import { useApolloClient } from '@apollo/client';
 
@@ -60,7 +60,7 @@ export default function LoginPage() {
           
           // navigate('/')
         }
-      }, [data, error, cpmuserDispatch, cpmuser, navigate])
+      }, [data, error, cpmuserDispatch, cpmuser, navigate, client])
 
   if (loading) return <Loader />
   return (

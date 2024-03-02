@@ -48,22 +48,22 @@ export default function Home() {
 
             <swiper-slide>
                 <div className="w-full rounded-xl overflow-hidden">
-                        <img src={cpm1} className="object-contain h-[350px] w-full rounded-xl"/>
+                        <img src={cpm1} alt='' className="object-contain h-[350px] w-full rounded-xl"/>
                 </div>
             </swiper-slide>
             <swiper-slide>
             <div className="w-full rounded-xl overflow-hidden">
-                        <img src={cpm2} className="object-contain h-[350px] w-full rounded-xl"/>
+                        <img src={cpm2} alt='' className="object-contain h-[350px] w-full rounded-xl"/>
                 </div>
             </swiper-slide>
             <swiper-slide>
             <div className="w-full rounded-xl overflow-hidden">
-                        <img src={cpm3} className="object-contain h-[350px] w-full rounded-xl"/>
+                        <img src={cpm3} alt='' className="object-contain h-[350px] w-full rounded-xl"/>
                 </div>
             </swiper-slide>
             <swiper-slide>
             <div className="w-full rounded-xl overflow-hidden">
-                        <img src={cpm4} className="object-contain h-[350px] w-full rounded-xl"/>
+                        <img src={cpm4} alt='' className="object-contain h-[350px] w-full rounded-xl"/>
                 </div>
             </swiper-slide>
     
