@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom'
 
 
-import NotFound from './pages/NotFound'
+// import NotFound from './pages/NotFound'
 import Projectpage from './pages/Projectpage.jsx'
 import Home from './pages/Home.jsx';
 import Manage from './pages/Manage.jsx'
@@ -53,7 +53,8 @@ const cache = new InMemoryCache({
 
 const httpLink = createHttpLink({
   // uri: '/graphql',
-  uri: 'http://localhost:5000/graphql'
+  // uri: 'http://localhost:5000/graphql',
+  uri: 'http://127.0.0.1:5000/graphql'
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
